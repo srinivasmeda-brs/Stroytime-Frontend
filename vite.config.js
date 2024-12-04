@@ -6,7 +6,10 @@ import svgr from 'vite-plugin-svgr';
 export default defineConfig({
   plugins: [react(), svgr()],
   server: {
-    host: '0.0.0.0',
+    host: '0.0.0.0', // Make the server accessible externally
     port: 4173,  // Ensure this port is used for your production build
   },
-})
+  build: {
+    outDir: 'dist', // Make sure the build output goes into the 'dist' folder
+  },
+});
